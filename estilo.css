@@ -176,3 +176,24 @@ main{
     font-size: 2em;
     color:#53af53;
   }
+/* tareas */
+.principal-tarea{
+    background-color:rgb(237, 239, 248) ;
+    width: 100%;
+    border-radius: 10px;
+   
+    margin: 0.5%;
+  
+    padding: 10% 2% 0% 2%;
+}
+.principal-tarea table{
+    width: 100%;
+    
+    
+}
+.principal-tarea th{
+    background-color:rgb(196, 201, 224) ;
+    padding: 4% 1% 4% 1%;
+    width: 12,5%;
+
+}
