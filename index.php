@@ -16,7 +16,7 @@
 
 		<div class="tabs-content">
 			<div id="login-tab-content" class="active">
-				<form class="login-form" action="login.php" method="post">
+				<form class="login-form" action="login/login.php" method="post">
 					<input type="text" class="input" id="usuario" name="usuario" placeholder="Email or Username">
 					<input type="password" class="input" id="contra" name="contra" placeholder="Password">
 					
@@ -27,7 +27,7 @@
 				</div><!-- .help-text -->
 			</div><!-- #login-tab-content -->
 			<div id="signup-tab-content" >
-				<form class="signup-form" action="registrar.php" method="post">
+				<form class="signup-form" action="login/registrar.php" method="post">
 					<input type="text" class="input" name="nombre" autocomplete="off" placeholder="Nombre">
 					<input type="text" class="input" name="apellido" autocomplete="off" placeholder="Apellido">
 					<input type="email" class="input" name="correo" autocomplete="off" placeholder="Email">
