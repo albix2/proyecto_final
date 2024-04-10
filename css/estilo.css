@@ -16,7 +16,7 @@ header{
     width: 100%;
 }
 
-main{
+.principal{
     display: flex;
     flex-direction: row;
     
@@ -52,7 +52,7 @@ main{
     color: black;
     text-decoration: none;
 }
-.principal{
+.principal-kamban{
     background-color:rgb(237, 239, 248) ;
     width: 100%;
     border-radius: 10px;
@@ -63,8 +63,20 @@ main{
     flex-direction: row;
 
 }
+/* calendario */
+.principal-calendario{
+    background-color:rgb(0, 42, 231) ;
+    width: 100%;
+    border-radius: 10px;
+    padding:1%;
+    margin: 0.5%;
+    margin-right: 1%;
+    margin-right: 1%;
+    margin-right: 1%;
+    padding: 2%;
+} 
 /* kanban */
-.principal article{
+.principal-kamban article{
     background-color:rgb(196, 201, 224) ;
     width: 40%;
     margin: 1%;
@@ -107,6 +119,8 @@ main{
     padding:1%;
     margin: 0.5%;
     margin-right: 1%;
+    margin-right: 1%;
+    margin-right: 1%;
     padding: 2%;
     
 }
@@ -126,7 +140,8 @@ main{
 .mensaje {
     background-color:rgb(196, 201, 224) ;
     width: 48%;
-    margin: 1%;
+  
+    
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -134,15 +149,20 @@ main{
 
 }
 
-.mensaje img ,.perfil img{
+.mensaje img {
+    width:5%;
+    margin-left:2%;
+    border-radius: 5em;
+}
+.perfil img{
     width: 10%;
     height: 10%;
-    padding: 2%;
+   
     border-radius: 5em; 
 }
-
 .mensaje p{
-    margin:3%;
+    margin-top:2%;
+    margin-left:2%;
     font-size: 0.9em;
 }
 .me {
@@ -196,4 +216,40 @@ main{
     padding: 4% 1% 4% 1%;
     width: 12,5%;
 
+}
+/* inicio */
+.principal-inicio {
+   display: grid;
+}
+
+.formulario{
+    background-color: #f8f8f8;
+    margin: auto;
+    margin-top:10%;
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+.formulario a{
+    /* width: 100%; */
+    padding: 2%;
+    text-decoration: none;
+    color: #000;
+}
+.inicio{
+    background-color: rgb(75, 82, 116);
+
+    width: 46%;
+}
+
+.registro{
+    background-color: rgb(107, 113, 148);
+    width: 46%;
+}
+.formulario form {
+    width: 100%;
+    padding: 2%;
 }
