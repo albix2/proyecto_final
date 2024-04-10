@@ -3,47 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="estilo.css">
     <title>Document</title>
+    <link rel="stylesheet" href="login/index.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1 class="fw-bold fs-3">gestor de tareas</h1>
-        
-    </header> 
-    <main class="principal-inicio">
-        <section class="formulario">
-            <a href="#inicio" class="inicio">inicio de sesion </a>
-            <a href="#registro" class="registro">registrar</a>
-            <form class="active" id="inicio" action="">
-                <p>Nombre: <input type="text" name="nombre" size="40"></p>
-  <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
-  <p>Sexo:
-    <input type="radio" name="hm" value="h"> Hombre
-    <input type="radio" name="hm" value="m"> Mujer
-  </p>
-  <p>
-    <input type="submit" value="Enviar">
-    <input type="reset" value="Borrar">
-  </p>
-            </form>
-            <form class="des" id="registro" action=" ">
-            <p>Nombre: <input type="text" name="nombre" size="40"></p>
-            <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
-            <p>Sexo:
-              <input type="radio" name="hm" value="h"> Hombre
-              <input type="radio" name="hm" value="m"> Mujer
-            </p>
-            <p>
-              <input type="submit" value="Enviar">
-              <input type="reset" value="Borrar">
-            </p></form>
-        </section>
-        
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <div class="form-wrap">
+		<div class="tabs">
+			<h3 class="signup-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+			<h3 class="login-tab"><a href="#signup-tab-content">Sign Up</a></h3>
+		</div><!-- .tabs -->
 
+		<div class="tabs-content">
+			<div id="login-tab-content" class="active">
+				<form class="login-form" action="login.php" method="post">
+					<input type="text" class="input" id="usuario" name="usuario" placeholder="Email or Username">
+					<input type="password" class="input" id="contra" name="contra" placeholder="Password">
+					
+					<input type="submit" class="button" value="Login">
+				</form><!-- .login-form -->
+				<div class="help-text">
+					<p>Forget your password?</p>
+				</div><!-- .help-text -->
+			</div><!-- #login-tab-content -->
+			<div id="signup-tab-content" >
+				<form class="signup-form" action="registrar.php" method="post">
+					<input type="text" class="input" name="nombre" autocomplete="off" placeholder="Nombre">
+					<input type="text" class="input" name="apellido" autocomplete="off" placeholder="Apellido">
+					<input type="email" class="input" name="correo" autocomplete="off" placeholder="Email">
+					<label >Ciudad</label>
+                    <select  name="ciudad" >
+                        <option   selected disabled>Seleccione la ciudad</option>
+                        <?php
+                        include("<login>conexion.php");
+                        mysqli_select_db($conn, "practicas");
+                        $consultar = "SELECT * FROM ciudad";
+                        $sql = mysqli_query($conn, $consultar);
+                        if ($sql) {
+                            while ($resultado = mysqli_fetch_assoc($sql)) {
+                                echo "<option value='" . $resultado['id_ciudad'] . "'>" . $resultado['nombre_ciudad'] . "</option>";
+                            }
+                        } else {
+                            echo "Error en la consulta: " . mysqli_error($conn);
+                        }
+                        ?>
+                    </select>
+					<input type="password" class="input" name="contra" autocomplete="off" placeholder="Password">
+					<input type="submit" class="button" value="Sign Up">
+				</form><!-- .signup-form -->
+				<div class="help-text">
+					<p>By signing up, you agree to our</p>
+					<p><a href="#">Terms of service</a></p>
+				</div><!-- .help-text -->
+			</div><!-- .signup-tab-content -->
+		</div><!-- .tabs-content -->
+	</div><!-- .form-wrap -->
 </body>
 </html>

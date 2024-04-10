@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
+    
     <title>Document</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
     <section class="enlaces">
         <ul>
             <li>
-                <a href="calendario.php"><i class="bi bi-calendar3"></i>calendario</a>
+                <a href="calendario/calendario.php"><i class="bi bi-calendar3"></i>calendario</a>
             </li>
             <li>
                 <a href=""><i class="bi bi-calendar2-event"></i>Tareas</a>
@@ -53,11 +54,13 @@
         </ul>
         
     </section> 
-    <section class="principal-calendario" id="contenido">
-    <?php
+    <section id="contenido" class="principal-calendario">
+      
+<?php
 include('config.php');
 
   $SqlEventos   = ("SELECT * FROM eventoscalendar");
+
   $resulEventos = mysqli_query($con, $SqlEventos);
 
 ?>
@@ -98,8 +101,8 @@ include('modalNuevoEvento.php');
 <script src="../js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="../js/moment.min.js"></script>	
-<script type="text/javascript" src="/js/fullcalendar.min.js"></script>
-<script src='/locales/es.js'></script>
+<script type="text/javascript" src="../js/fullcalendar.min.js"></script>
+<script src='../locales/es.js'></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -150,7 +153,7 @@ var F_final = moment(valorFechaFin, "DD-MM-YYYY HH:mm:ss").format('DD-MM-YYYY HH
                 id_etiqueta: '<?php echo $dataEvento['id_etiquetas']; ?>',
                 id_estado: '<?php echo $dataEvento['id_estado']; ?>'
                 },
-            // <?php } ?>
+            <?php } ?>
         ],
 
         // Eliminar Evento
