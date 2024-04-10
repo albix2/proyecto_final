@@ -16,7 +16,7 @@
 	if($row[0] > 0 ){
 		session_start();
 		$_SESSION['nombre'] = $usuario;
-		header( 'Location: ../index1.html' );
+		header( 'Location: ../calendario/calendario.php' );
 	}
 	else{
 		header( 'Location: ../index.php' );		

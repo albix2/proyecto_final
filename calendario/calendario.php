@@ -33,7 +33,7 @@
                 <a href="calendario/calendario.php"><i class="bi bi-calendar3"></i>calendario</a>
             </li>
             <li>
-                <a href=""><i class="bi bi-calendar2-event"></i>Tareas</a>
+                <a href="../tarea/tareas.php"><i class="bi bi-calendar2-event"></i>Tareas</a>
             </li>
             <li>        
                 <a href=""><i class="bi bi-people-fill"></i>grupo de trabajo</a>
