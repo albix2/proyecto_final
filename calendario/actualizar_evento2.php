@@ -82,6 +82,6 @@ if ($id_estado == 'pendiente') {
 // echo hola;
 // Insertar evento en la base de datos
 mysqli_query($con, $actualizar_evento);
-// echo $actualizar_evento;
+echo $actualizar_evento;
 header("Location: calendario.php?ea=1");
 ?>

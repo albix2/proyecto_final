@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
-    
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +32,7 @@
                 <a href="calendario/calendario.php"><i class="bi bi-calendar3"></i>calendario</a>
             </li>
             <li>
-                <a href="../tarea/tareas.php"><i class="bi bi-calendar2-event"></i>Tareas</a>
+                <a href=""><i class="bi bi-calendar2-event"></i>Tareas</a>
             </li>
             <li>        
                 <a href=""><i class="bi bi-people-fill"></i>grupo de trabajo</a>
@@ -54,13 +53,11 @@
         </ul>
         
     </section> 
-    <section id="contenido" class="principal-calendario">
-      
-<?php
+    <section class="principal-calendario">
+    <?php
 include('config.php');
 
   $SqlEventos   = ("SELECT * FROM eventoscalendar");
-
   $resulEventos = mysqli_query($con, $SqlEventos);
 
 ?>
@@ -153,7 +150,7 @@ var F_final = moment(valorFechaFin, "DD-MM-YYYY HH:mm:ss").format('DD-MM-YYYY HH
                 id_etiqueta: '<?php echo $dataEvento['id_etiquetas']; ?>',
                 id_estado: '<?php echo $dataEvento['id_estado']; ?>'
                 },
-            <?php } ?>
+            // <?php } ?>
         ],
 
         // Eliminar Evento
